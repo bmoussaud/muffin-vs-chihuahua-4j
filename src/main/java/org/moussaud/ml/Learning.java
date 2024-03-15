@@ -27,7 +27,7 @@ import ai.djl.training.util.ProgressBar;
 
 public class Learning implements Constants {
 
-    public static void main(String[] args) throws Exception {
+    public static void aim(String[] args) throws Exception {
         new Learning().run();
     }
 

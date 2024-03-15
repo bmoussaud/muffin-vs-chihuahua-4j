@@ -19,7 +19,7 @@ import ai.djl.nn.Block;
 import ai.djl.translate.Translator;
 
 public class Doing implements Constants {
-    public static void main(String[] args) throws Exception {
+    public static void aim(String[] args) throws Exception {
         new Doing().check("data/test-1.png");
         new Doing().check("data/test-2.png");
         new Doing().check("data/test-3.png");
