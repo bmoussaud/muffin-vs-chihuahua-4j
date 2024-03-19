@@ -50,21 +50,21 @@ public class Learning implements Constants {
         }
     }
 
-    private  void saveLabels(Path modelDir, List<String> synset) throws IOException {
+    private void saveLabels(Path modelDir, List<String> synset) throws IOException {
         var labelFile = modelDir.resolve("synset.txt");
         try (Writer writer = Files.newBufferedWriter(labelFile)) {
             writer.write(String.join("\n", synset));
         }
     }
 
-    private  TrainingConfig getTrainingConfig() {
+    private TrainingConfig getTrainingConfig() {
         return new DefaultTrainingConfig(Loss.softmaxCrossEntropyLoss())
                 .addEvaluator(new Accuracy())
                 .optExecutorService()
                 .addTrainingListeners(TrainingListener.Defaults.logging(1));
     }
 
-    private  ImageFolder loadDataSet(String folder) throws IOException {
+    private ImageFolder loadDataSet(String folder) throws IOException {
         ImageFolder dataset = ImageFolder.builder()
                 .setRepositoryPath(Paths.get(folder))
                 .addTransform(new Resize(224, 224))

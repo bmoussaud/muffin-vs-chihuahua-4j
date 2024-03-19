@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MachineLearningController {
 
-     static Logger logger = LoggerFactory.getLogger(MachineLearningController.class);
+    static Logger logger = LoggerFactory.getLogger(MachineLearningController.class);
 
     @Autowired
     MachineLearningService service;
@@ -27,16 +27,21 @@ public class MachineLearningController {
         return results;
     }
 
-    @GetMapping(value = "/liveness")
-	public String liveness() {
-		logger.debug("liveness");
-		return "okay";
-	}
+    @GetMapping(value = "/learn", produces = MediaType.APPLICATION_JSON_VALUE)
+    public void learn() {
+        service.learn(Constants.PATH_TO_TRAIN, Constants.PATH_TO_VALIDATE);
+    }
 
-	@GetMapping(value = "/readiness")
-	public String readiness() {
-		logger.debug("readiness");
-		return "okay";
-	}
+    @GetMapping(value = "/liveness")
+    public String liveness() {
+        logger.debug("liveness");
+        return "okay";
+    }
+
+    @GetMapping(value = "/readiness")
+    public String readiness() {
+        logger.debug("readiness");
+        return "okay";
+    }
 
 }

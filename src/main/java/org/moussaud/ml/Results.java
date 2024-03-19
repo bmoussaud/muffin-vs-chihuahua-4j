@@ -3,8 +3,6 @@ package org.moussaud.ml;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.stereotype.Service;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ai.djl.modality.Classifications;

@@ -6,9 +6,10 @@ import ai.djl.ndarray.types.Shape;
 import ai.djl.nn.Block;
 
 public interface Constants {
+    static final String DATA_HOME = "/Users/bmoussaud/Downloads";
     static final String MUFFIN_VS_CHIHUAHUA_MODEL = "my-muffin-vs-chihuahua-model";
-    static final String PATH_TO_TRAIN = "/Users/bmoussaud/Library/CloudStorage/Box-Box/muffin-vs-chihuahua/archive/train";
-    static final String PATH_TO_VALIDATE = "/Users/bmoussaud/Library/CloudStorage/Box-Box/muffin-vs-chihuahua/archive/test";
+    static final String PATH_TO_TRAIN = DATA_HOME + "/muffin-vs-chihuahua/archive/train";
+    static final String PATH_TO_VALIDATE = DATA_HOME + "/muffin-vs-chihuahua/archive/test";
 
     default Model getModel() {
         Model model = Model.newInstance(MUFFIN_VS_CHIHUAHUA_MODEL);
