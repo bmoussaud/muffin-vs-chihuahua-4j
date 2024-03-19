@@ -37,7 +37,7 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -60,6 +60,35 @@
             <artifactId>mxnet-model-zoo</artifactId>
             <version>0.26.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.zhanhb</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>5.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>htmx.org</artifactId>
+            <version>1.9.10</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>github-fork-ribbon-css</artifactId>
+            <version>0.2.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>

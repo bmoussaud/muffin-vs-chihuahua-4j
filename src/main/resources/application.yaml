@@ -1,7 +1,13 @@
-
 spring:
   application:
     name: muffin-vs-chihuahua-4j
+  thymeleaf:
+    cache: false # Allow Thymeleaf templates to be reloaded at runtime
+    prefix: classpath:/templates
+    check-template: true
+    check-template-location: true
+    enabled: true
+    encoding: UTF-8
 
 management:
   endpoints:
@@ -16,12 +22,5 @@ management:
 
 logging:
   level:
-    root: ERROR
-    org.springframework.web: ERROR    
-    org.hibernate: ERROR
-    org.springframework.cloud.bindings: debug
-    org.springframework.jdbc.core.JdbcTemplate: debug
-    org.springframework.jdbc.datasource.init.ScriptUtils: debug
     org.moussaud: debug
     ai.djl: debug
-    

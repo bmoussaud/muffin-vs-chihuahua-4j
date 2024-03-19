@@ -45,7 +45,7 @@ public class MachineLearningService {
     private Translator<Image, Classifications> translator;
 
     private Path modelDir = Paths.get("model");
-    private String modelName = Constants.MUFFIN_VS_CHIHUAHUA_MODEL;
+    private static String modelName = Constants.MUFFIN_VS_CHIHUAHUA_MODEL;
 
     @PostConstruct
     public void init() {
@@ -62,11 +62,12 @@ public class MachineLearningService {
     @PreDestroy
     public void closeModel() {
         logger.info("Close the model {}", model.getName());
-        model.close();
+        if (model != null)
+            model.close();
     }
 
     private Model getModel() {
-        logger.info("get the model {}", modelName);
+        logger.info("Get the model {}", modelName);
         Model model = Model.newInstance(modelName);
         Block resNetN50 = ResNetV1.builder()
                 .setImageShape(new Shape(3, 224, 224))

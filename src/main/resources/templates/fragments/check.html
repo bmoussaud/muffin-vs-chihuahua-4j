@@ -1,0 +1,29 @@
+<section id="ml">
+  <div class="card shadow rounded bg-body">
+    <div class="card-header">Results</div>
+
+    <div class="card-body">
+      <div class="m-2">
+        <div
+          class="ml-entry"
+          style="font-size: 90%"
+          th:each="entry: ${check.results}"
+        >
+          <hr />
+          <h2 class="ml-entry-image">
+            <img th:src="${entry.url}" class="img-fluid" />
+          </h2>
+          <p class="ml-entry-content" th:text="${entry.content}"></p>
+        </div>
+
+        <hr />
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-auto">
+          <a th:href="@{/}" class="btn btn-primary">Reset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

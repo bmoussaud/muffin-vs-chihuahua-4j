@@ -1,0 +1,44 @@
+<section id="ml">
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-bg-dark rounded-3">
+        <h2>Train the model</h2>
+        <p>Train the model with predefined input data</p>
+        <button class="btn btn-outline-light" type="button">Train</button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+        <h2>Use the model</h2>
+        <p>Check if the 4 pre-definedimages are well recognized by the model</p>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          th:hx-post="@{/check.html}"
+        >
+          Check
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="card" style="width: 18rem" th:each="entry: ${check.results}">
+        <img th:src="${entry.url}" class="card-img-top" alt="x" />
+        <div class="card-body">
+          <!--
+        <h5 class="card-title">xxx</h5>
+        -->
+          <p class="card-text" th:text="${entry.content}"></p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <div class="col-auto">
+        <a th:href="@{/}" class="btn btn-primary">Clear</a>
+      </div>
+    </div>
+  </div>
+</section>
